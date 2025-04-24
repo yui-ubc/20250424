@@ -3,12 +3,12 @@ library(tidyverse)
 data <- read_csv("data/penguins.csv")
 
 glimpse(data)
-summarise(data, mean_bill_length = mean(bill_length_mm), mean_bill_depth = mean(bill_depth_mm))
+summary_stats <- summarise(data, mean_bill_length = mean(bill_length_mm), mean_bill_depth = mean(bill_depth_mm))
 
 saveRDS(summary_stats, "results/summary-stats.rds")
 
 # Visualizations
-ggplot(data, aes(x = species, y = bill_length_mm, fill = species)) +
+penguin_plot <- ggplot(data, aes(x = species, y = bill_length_mm, fill = species)) +
   geom_boxplot() +
   theme_minimal()
 
