@@ -3,5 +3,4 @@
 export(load_penguin_data)
 export(predict_penguin_classes)
 export(process_penguin_data)
-export(train_penguin_model)
-import(tidymodels)
+export(split_data)

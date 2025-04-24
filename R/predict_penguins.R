@@ -30,7 +30,10 @@ predict_penguin_classes <- function(model_path, test_data_path) {
   library(tidymodels)
 
   penguin_fit <- readRDS(model_path)
-  test_data <- readRDS(test_data_path)
+  data <- readRDS(test_data_path)
+
+  test_data <- split_data(data)$test_data
+
 
   predictions <- predict(penguin_fit, test_data, type = "class") %>%
     bind_cols(test_data)
