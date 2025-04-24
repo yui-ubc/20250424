@@ -1,10 +1,14 @@
 all:
 	mkdir -p data
 	mkdir -p results
+	mkdir -p docs
 	Rscript R/01_load_data.R
 	Rscript R/02_methods.R
 	Rscript R/03_model.R
 	Rscript R/04_results.R
+
+docs:
+	mkdir -p docs
 
 data:
 	mkdir -p data

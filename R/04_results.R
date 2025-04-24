@@ -1,6 +1,6 @@
-#source("R/predict_penguins.R")
-#source("R/train_penguin_model.R")
-library(peng)
+source("R/predict_penguins.R")
+source("R/train_penguin_model.R")
+#library(peng)
 
 data <- readRDS("results/modeling-data.rds")
 
