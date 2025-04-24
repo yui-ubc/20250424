@@ -9,3 +9,6 @@ load:
 
 method:
 	Rscript R/02_methods.R
+
+model:
+	Rscript R/03_model.R
