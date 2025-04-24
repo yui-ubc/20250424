@@ -1,13 +1,10 @@
-library(tidyverse)
-library(tidymodels)
+source("R/predict_penguins.R")
 
-penguin_fit <- readRDS("results/model-fit.rds")
-test_data <- readRDS("results/test-data.rds")
+predictions <- predict_penguin_classes(
+  model_path = "results/model-fit.rds",
+  test_data_path = "results/test-data.rds"
+)
 
-predictions <- predict(penguin_fit, test_data, type = "class") %>%
-  bind_cols(test_data)
-
-# Confusion matrix
 conf_mat <- conf_mat(predictions, truth = species, estimate = .pred_class)
 conf_mat
 
