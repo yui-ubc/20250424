@@ -9,7 +9,11 @@
 #' @export
 #'
 #' @examples
-#' load_penguin_data("data/penguins.csv")
+#' penguins_raw <- palmerpenguins::penguins
+#' penguins_clean <- na.omit(penguins_raw)
+#' # You would typically write to CSV before using this function:
+#' # write_csv(penguins_clean, "data/penguins.csv")
+#' # penguins <- load_penguin_data("data/penguins.csv")
 load_penguin_data <- function(output_file = "data/penguins.csv") {
   # Load required packages
   library(tidyverse)
