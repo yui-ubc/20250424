@@ -1,3 +1,10 @@
 project:
   type: website
   output-dir: docs
+
+website:
+  title: "Final"
+  navbar:
+    left:
+      - text: "Home"
+        href: t6-quarto.html
