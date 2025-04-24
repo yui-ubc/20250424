@@ -12,3 +12,7 @@ method:
 
 model:
 	Rscript R/03_model.R
+
+output:
+	Rscript R/04_results.R
+
