@@ -28,6 +28,9 @@ jobs:
           Rscript -e 'install.packages("devtools")'
           Rscript -e 'install.packages("covr")'
           Rscript -e 'install.packages("testthat")'
+          Rscript -e 'install.packages("tidymodels")'
+          Rscript -e 'install.packages("tidyverse")'
+          Rscript -e 'install.packages("palmerpenguins")'
           # Install other dependencies as required by your project
 
       # Run tests and collect coverage
