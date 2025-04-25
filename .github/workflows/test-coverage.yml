@@ -22,25 +22,25 @@ jobs:
         with:
           use-public-rspm: true
 
-      # Install dependencies
+      # Install dependencies inside R
       - name: Install dependencies
         run: |
-          install.packages("covr")
-          install.packages("testthat")  # Assuming testthat is being used for testing
+          Rscript -e 'install.packages("covr")'
+          Rscript -e 'install.packages("testthat")'  # Assuming testthat is being used for testing
           # Install other dependencies as required by your project
 
       # Run tests and collect coverage
       - name: Run tests and collect coverage
         run: |
           # Run tests with testthat
-          system("Rscript -e 'devtools::test()'")
+          Rscript -e 'devtools::test()'
 
           # Generate coverage report using covr
+          Rscript -e '
           coverage <- covr::package_coverage(quiet = TRUE, clean = FALSE)
           print(coverage)
 
           # Show the coverage percentage
           coverage_percentage <- sum(coverage$covered) / sum(coverage$total) * 100
           cat("Test coverage percentage: ", coverage_percentage, "%\n")
-
-        shell: Rscript {0}
+          '
