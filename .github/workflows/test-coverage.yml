@@ -25,8 +25,9 @@ jobs:
       # Install dependencies inside R
       - name: Install dependencies
         run: |
+          Rscript -e 'install.packages("devtools")'
           Rscript -e 'install.packages("covr")'
-          Rscript -e 'install.packages("testthat")'  # Assuming testthat is being used for testing
+          Rscript -e 'install.packages("testthat")'
           # Install other dependencies as required by your project
 
       # Run tests and collect coverage
